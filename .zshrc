@@ -1,5 +1,7 @@
-
-# The following lines were added by compinstall
+WORDCHARS=${WORDCHARS/\//}
+WORDCHARS=${WORDCHARS/\./}
+WORDCHARS=${WORDCHARS/\-/}
+WORDCHARS=${WORDCHARS/\_/}
 
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/dave/.zshrc'

@@ -16,6 +16,9 @@
 (menu-bar-mode -1)
 (add-hook 'after-init-hook 'global-company-mode)
 
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
