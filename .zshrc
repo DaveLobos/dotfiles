@@ -9,7 +9,7 @@ zstyle :compinstall filename '/home/dave/.zshrc'
 autoload -Uz compinit
 compinit
 
-PROMPT='%F{#00CCCC}%c $ %f'
+PROMPT='%F{#82AAFF}%c%f $ '
 
 # History
 
