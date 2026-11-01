@@ -1,10 +1,4 @@
 WORDCHARS=${WORDCHARS/\//}
-WORDCHARS=${WORDCHARS/\./}
-WORDCHARS=${WORDCHARS/\-/}
-WORDCHARS=${WORDCHARS/\_/}
-
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/dave/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -57,10 +51,6 @@ if [ -d "$HOME/go/bin" ] ; then
     PATH="$HOME/go/bin:$PATH"
 fi
 
-if [ -d "$HOME/.local/elixir/bin" ] ; then
-    PATH="$HOME/.local/elixir/bin:$PATH"
-fi
-
 if [ -d "$HOME/.local/zig" ] ; then
     PATH="$HOME/.local/zig:$PATH"
 fi
@@ -69,11 +59,22 @@ if [ -d "$HOME/.duckdb/cli/latest" ] ; then
     PATH="$PATH:$HOME/.duckdb/cli/latest"
 fi
 
-. "$HOME/.cargo/env"
-
 export PNPM_HOME='/home/dave/.local/share/pnpm'
 
 case ":$PATH:" in
   ":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
+
+# . "$HOME/.cargo/env"
+# 
+# if [ -d "$HOME/.local/elixir/bin" ] ; then
+#     PATH="$HOME/.local/elixir/bin:$PATH"
+# fi
+# 
+# if [ -d "$HOME/.local/platform-tools" ] ; then
+#     PATH="$PATH:$HOME/.local/platform-tools"
+# fi
+# 
+# export ADB_SERVER_SOCKET=tcp:$(ip route show default | awk "{print \$3}"):5037
+
